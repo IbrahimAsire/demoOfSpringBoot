@@ -1,5 +1,6 @@
 package com.example.demo.student;
 
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,8 +33,13 @@ public class StudentController {
     }
 
     @PutMapping(path = "{studentId}")
-    public void updateStudent() {
-
+    public void updateStudent(
+            @PathVariable("stuentId") Long studentId,
+            @PathParam(required = false) String name,
+            @PathParam(required = false) String email {
+        studentService.updateStudent(studentId, name, email);
     }
+
+
 
 }
