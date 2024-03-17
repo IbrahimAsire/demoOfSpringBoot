@@ -48,7 +48,7 @@ public class StudentService {
                               String name,
                               String email) {
         Student student = studentRepository.findById(studentId)
-                .orElseThrow(()-> new IllegalStateException(
+                .orElseThrow(() -> new IllegalStateException(
                         "student with id" + studentId + "does not exist"));
 
                 if (name != null &&
